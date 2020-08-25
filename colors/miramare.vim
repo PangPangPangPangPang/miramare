@@ -42,7 +42,7 @@ let s:palette = {
       \ 'red':        ['#e68183',   '167',  'Red'],
       \ 'orange':     ['#e39b7b',   '208',  'Red'],
       \ 'yellow':     ['#d9bb80',   '214',  'Yellow'],
-      \ 'green':      ['#87af87',   '108',  'Green'],
+      \ 'green':      ['#a7c080',   '142',  'Green'],
       \ 'cyan':       ['#87c095',   '108',  'Cyan'],
       \ 'blue':       ['#89beba',   '109',  'Blue'],
       \ 'purple':     ['#d3a0bc',   '175',  'Magenta'],
@@ -235,13 +235,13 @@ if s:configuration.enable_bold
   call s:HL('StorageClass', s:palette.orange, s:palette.none, 'bold')
   call s:HL('Title', s:palette.orange, s:palette.none, 'bold')
   call s:HL('Type', s:palette.yellow, s:palette.none, 'bold')
-  call s:HL('Function', s:palette.green, s:palette.none, 'bold')
+  call s:HL('Function', s:palette.cyan, s:palette.none, 'bold')
   call s:HL('Constant', s:palette.cyan, s:palette.none, 'bold')
 else 
   call s:HL('StorageClass', s:palette.orange, s:palette.none)
   call s:HL('Title', s:palette.orange, s:palette.none)
   call s:HL('Type', s:palette.yellow, s:palette.none)
-  call s:HL('Function', s:palette.green, s:palette.none)
+  call s:HL('Function', s:palette.cyan, s:palette.none)
   call s:HL('Constant', s:palette.cyan, s:palette.none)
   call s:HL('Conditional', s:palette.red, s:palette.none)
 endif
