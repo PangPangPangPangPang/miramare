@@ -128,15 +128,14 @@ if s:configuration.transparent_background
   call s:HL('EndOfBuffer', s:palette.bg0, s:palette.none)
   call s:HL('FoldColumn', s:palette.grey, s:palette.none)
   call s:HL('Folded', s:palette.grey, s:palette.none)
-  call s:HL('SignColumn', s:palette.fg, s:palette.none)
 else
   call s:HL('Normal', s:palette.fg, s:palette.bg0)
   call s:HL('Terminal', s:palette.fg, s:palette.bg0)
   call s:HL('EndOfBuffer', s:palette.bg0, s:palette.bg0)
   call s:HL('FoldColumn', s:palette.grey, s:palette.bg1)
   call s:HL('Folded', s:palette.grey, s:palette.bg1)
-  call s:HL('SignColumn', s:palette.fg, s:palette.bg1)
 endif
+call s:HL('SignColumn', s:palette.fg, s:palette.none)
 call s:HL('ColorColumn', s:palette.none, s:palette.bg1)
 call s:HL('Conceal', s:palette.grey, s:palette.none)
 if s:configuration.cursor ==# 'auto'
@@ -159,9 +158,9 @@ call s:HL('CursorColumn', s:palette.none, s:palette.bg1)
 call s:HL('CursorLine', s:palette.none, s:palette.bg1)
 call s:HL('LineNr', s:palette.grey, s:palette.none)
 if &relativenumber == 1 && &cursorline == 0
-  call s:HL('CursorLineNr', s:palette.fg, s:palette.none)
+  call s:HL('CursorLineNr', s:palette.yellow, s:palette.none)
 else
-  call s:HL('CursorLineNr', s:palette.fg, s:palette.bg1)
+  call s:HL('CursorLineNr', s:palette.yellow, s:palette.bg1)
 endif
 call s:HL('DiffAdd', s:palette.none, s:palette.bg_green)
 call s:HL('DiffChange', s:palette.none, s:palette.bg_blue)
@@ -193,9 +192,9 @@ call s:HL('StatusLineTermNC', s:palette.grey, s:palette.bg1)
 call s:HL('TabLine', s:palette.fg, s:palette.bg4)
 call s:HL('TabLineFill', s:palette.grey, s:palette.bg1)
 call s:HL('TabLineSel', s:palette.bg0, s:palette.green)
-call s:HL('VertSplit', s:palette.bg4, s:palette.none)
-call s:HL('Visual', s:palette.bg0, s:palette.gold)
-call s:HL('VisualNOS', s:palette.bg0, s:palette.gold, 'underline')
+call s:HL('VertSplit', s:palette.grey, s:palette.none)
+call s:HL('Visual', s:palette.none, s:palette.light_grey)
+call s:HL('VisualNOS', s:palette.none, s:palette.light_grey, 'underline')
 call s:HL('CursorIM', s:palette.none, s:palette.fg)
 call s:HL('ToolbarLine', s:palette.none, s:palette.grey)
 call s:HL('ToolbarButton', s:palette.fg, s:palette.bg0, 'bold')
@@ -234,12 +233,12 @@ call s:HL('StorageClass', s:palette.orange, s:palette.none, 'bold')
 call s:HL('Tag', s:palette.orange, s:palette.none)
 call s:HL('Label', s:palette.orange, s:palette.none)
 call s:HL('Structure', s:palette.orange, s:palette.none)
-call s:HL('Operator', s:palette.orange, s:palette.none)
+call s:HL('Operator', s:palette.purple, s:palette.none)
 call s:HL('Title', s:palette.orange, s:palette.none, 'bold')
-call s:HL('Special', s:palette.yellow, s:palette.none)
-call s:HL('SpecialChar', s:palette.yellow, s:palette.none)
+call s:HL('Special', s:palette.orange, s:palette.none)
+call s:HL('SpecialChar', s:palette.orange, s:palette.none)
 call s:HL('Type', s:palette.yellow, s:palette.none, 'bold')
-call s:HL('Function', s:palette.green, s:palette.none, 'bold')
+call s:HL('Function', s:palette.cyan, s:palette.none, 'bold')
 call s:HL('String', s:palette.green, s:palette.none)
 call s:HL('Character', s:palette.green, s:palette.none)
 call s:HL('Constant', s:palette.cyan, s:palette.none, 'bold')
@@ -278,23 +277,13 @@ call s:HL('Orange', s:palette.orange, s:palette.none)
 call s:HL('Purple', s:palette.purple, s:palette.none)
 call s:HL('Green', s:palette.green, s:palette.none)
 call s:HL('Cyan', s:palette.cyan, s:palette.none)
-if s:configuration.transparent_background
-  call s:HL('RedSign', s:palette.red, s:palette.none)
-  call s:HL('OrangeSign', s:palette.orange, s:palette.none)
-  call s:HL('YellowSign', s:palette.yellow, s:palette.none)
-  call s:HL('GreenSign', s:palette.green, s:palette.none)
-  call s:HL('CyanSign', s:palette.cyan, s:palette.none)
-  call s:HL('BlueSign', s:palette.blue, s:palette.none)
-  call s:HL('PurpleSign', s:palette.purple, s:palette.none)
-else
-  call s:HL('RedSign', s:palette.red, s:palette.bg1)
-  call s:HL('OrangeSign', s:palette.orange, s:palette.bg1)
-  call s:HL('YellowSign', s:palette.yellow, s:palette.bg1)
-  call s:HL('GreenSign', s:palette.green, s:palette.bg1)
-  call s:HL('CyanSign', s:palette.cyan, s:palette.bg1)
-  call s:HL('BlueSign', s:palette.blue, s:palette.bg1)
-  call s:HL('PurpleSign', s:palette.purple, s:palette.bg1)
-endif
+call s:HL('RedSign', s:palette.red, s:palette.none)
+call s:HL('OrangeSign', s:palette.orange, s:palette.none)
+call s:HL('YellowSign', s:palette.yellow, s:palette.none)
+call s:HL('GreenSign', s:palette.green, s:palette.none)
+call s:HL('CyanSign', s:palette.cyan, s:palette.none)
+call s:HL('BlueSign', s:palette.blue, s:palette.none)
+call s:HL('PurpleSign', s:palette.purple, s:palette.none)
 " }}}
 " }}}
 " Extended File Types: {{{
@@ -1460,11 +1449,11 @@ call s:HL('ALEInfo', s:palette.none, s:palette.none, 'undercurl', s:palette.blue
 highlight! link ALEErrorSign RedSign
 highlight! link ALEWarningSign YellowSign
 highlight! link ALEInfoSign BlueSign
-highlight! link ALEVirtualTextError Grey
-highlight! link ALEVirtualTextWarning Grey
-highlight! link ALEVirtualTextInfo Grey
-highlight! link ALEVirtualTextStyleError Grey
-highlight! link ALEVirtualTextStyleWarning Grey
+highlight! link ALEVirtualTextError RedSign
+highlight! link ALEVirtualTextWarning YellowSign
+highlight! link ALEVirtualTextInfo BlueSign
+highlight! link ALEVirtualTextStyleError RedSign
+highlight! link ALEVirtualTextStyleWarning YellowSign
 " }}}
 " neomake/neomake{{{
 highlight! link NeomakeError ALEError
