@@ -1729,6 +1729,7 @@ call s:HL('QuickScopeSecondary', s:palette.blue, s:palette.none, 'underline')
 " }}}
 " APZelos/blamer.nvim {{{
 highlight! link Blamer Grey
+highlight! link QuickBG bg
 " }}}
 " }}}
 " Terminal: {{{
