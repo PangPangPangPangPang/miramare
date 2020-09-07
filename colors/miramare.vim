@@ -1475,11 +1475,12 @@ call s:HL('ALEInfo', s:palette.none, s:palette.none, 'undercurl', s:palette.blue
 highlight! link ALEErrorSign RedSign
 highlight! link ALEWarningSign YellowSign
 highlight! link ALEInfoSign BlueSign
-highlight! link ALEVirtualTextError Grey
-highlight! link ALEVirtualTextWarning Grey
-highlight! link ALEVirtualTextInfo Grey
-highlight! link ALEVirtualTextStyleError Grey
-highlight! link ALEVirtualTextStyleWarning Grey
+highlight! link ALEVirtualTextError RedSign
+highlight! link ALEVirtualTextWarning YellowSign
+highlight! link ALEVirtualTextInfo BlueSign
+highlight! link ALEVirtualTextStyleError RedSign
+highlight! link ALEVirtualTextStyleWarning YellowSign
+
 " }}}
 " neomake/neomake{{{
 highlight! link NeomakeError ALEError
