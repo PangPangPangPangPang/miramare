@@ -263,11 +263,11 @@ else
 endif
 if s:configuration.disable_italic_comment
   call s:HL('Comment', s:palette.light_grey, s:palette.none)
-  call s:HL('SpecialComment', s:palette.light_grey, s:palette.none)
+  call s:HL('SpecialComment', s:palette.red, s:palette.none)
   call s:HL('Todo', s:palette.purple, s:palette.none)
 else
   call s:HL('Comment', s:palette.light_grey, s:palette.none, 'italic')
-  call s:HL('SpecialComment', s:palette.light_grey, s:palette.none, 'italic')
+  call s:HL('SpecialComment', s:palette.red, s:palette.none, 'italic')
   call s:HL('Todo', s:palette.purple, s:palette.none, 'italic')
 endif
 call s:HL('Delimiter', s:palette.fg, s:palette.none)
