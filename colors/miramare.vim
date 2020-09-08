@@ -31,10 +31,10 @@ let s:configuration.current_word = get(g:, 'miramare_current_word', get(g:, 'mir
 " Palette: {{{
 let s:palette = {
       \ 'bg0':        ['#2A2426',   '235',  'Black'],
-      \ 'bg1':        ['#242021',   '236',  'DarkGrey'],
-      \ 'bg2':        ['#242021',   '237',  'DarkGrey'],
-      \ 'bg3':        ['#242021',   '238',  'DarkGrey'],
-      \ 'bg4':        ['#242021',   '239',  'Grey'],
+      \ 'bg1':        ['#240000',   '236',  'DarkGrey'],
+      \ 'bg2':        ['#240000',   '237',  'DarkGrey'],
+      \ 'bg3':        ['#240000',   '238',  'DarkGrey'],
+      \ 'bg4':        ['#240000',   '239',  'Grey'],
       \ 'bg_red':     ['#392f32',   '52',   'DarkRed'],
       \ 'bg_green':   ['#333b2f',   '22',   'DarkGreen'],
       \ 'bg_blue':    ['#203a41',   '17',   'DarkBlue'],
@@ -178,9 +178,9 @@ call s:HL('IncSearch', s:palette.none, s:palette.none, 'reverse')
 call s:HL('Search', s:palette.bg0, s:palette.red)
 call s:HL('MatchParen', s:palette.none, s:palette.light_grey)
 call s:HL('NonText', s:palette.grey, s:palette.none)
-call s:HL('Pmenu', s:palette.fg, s:palette.grey)
+call s:HL('Pmenu', s:palette.fg, s:palette.bg1)
 call s:HL('PmenuSbar', s:palette.none, s:palette.bg2)
-call s:HL('PmenuThumb', s:palette.none, s:palette.grey)
+call s:HL('PmenuThumb', s:palette.none, s:palette.bg1)
 call s:HL('PmenuSel', s:palette.bg0, s:palette.fg)
 call s:HL('WildMenu', s:palette.bg0, s:palette.fg)
 call s:HL('Question', s:palette.yellow, s:palette.none)
