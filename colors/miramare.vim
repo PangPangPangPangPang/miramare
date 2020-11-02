@@ -444,8 +444,8 @@ highlight! link cssValueNumber Green
 highlight! link cssValueAngle Green
 highlight! link cssValueTime Green
 highlight! link cssValueFrequency Green
-highlight! link cssVendor Grey
-highlight! link cssNoise Grey
+highlight! link cssVendor Fg
+highlight! link cssNoise Fg
 " }}}
 " }}}
 " SASS: {{{
