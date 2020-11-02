@@ -523,7 +523,7 @@ highlight! link jsBracket Blue
 highlight! link jsBlockLabel Cyan
 highlight! link jsFunctionKey Green
 highlight! link jsClassDefinition Yellow
-highlight! link jsDot Grey
+highlight! link jsDot Fg
 highlight! link jsDestructuringBlock Blue
 highlight! link jsSpreadExpression Purple
 highlight! link jsSpreadOperator Green
