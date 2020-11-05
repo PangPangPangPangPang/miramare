@@ -293,23 +293,13 @@ call s:HL('Orange', s:palette.orange, s:palette.none)
 call s:HL('Purple', s:palette.purple, s:palette.none)
 call s:HL('Green', s:palette.green, s:palette.none)
 call s:HL('Cyan', s:palette.cyan, s:palette.none)
-if s:configuration.transparent_background
-  call s:HL('RedSign', s:palette.red, s:palette.none)
-  call s:HL('OrangeSign', s:palette.orange, s:palette.none)
-  call s:HL('YellowSign', s:palette.yellow, s:palette.none)
-  call s:HL('GreenSign', s:palette.green, s:palette.none)
-  call s:HL('CyanSign', s:palette.cyan, s:palette.none)
-  call s:HL('BlueSign', s:palette.blue, s:palette.none)
-  call s:HL('PurpleSign', s:palette.purple, s:palette.none)
-else
-  call s:HL('RedSign', s:palette.red, s:palette.bg1)
-  call s:HL('OrangeSign', s:palette.orange, s:palette.bg1)
-  call s:HL('YellowSign', s:palette.yellow, s:palette.bg1)
-  call s:HL('GreenSign', s:palette.green, s:palette.bg1)
-  call s:HL('CyanSign', s:palette.cyan, s:palette.bg1)
-  call s:HL('BlueSign', s:palette.blue, s:palette.bg1)
-  call s:HL('PurpleSign', s:palette.purple, s:palette.bg1)
-endif
+call s:HL('RedSign', s:palette.red, s:palette.none)
+call s:HL('OrangeSign', s:palette.orange, s:palette.none)
+call s:HL('YellowSign', s:palette.yellow, s:palette.none)
+call s:HL('GreenSign', s:palette.green, s:palette.none)
+call s:HL('CyanSign', s:palette.cyan, s:palette.none)
+call s:HL('BlueSign', s:palette.blue, s:palette.none)
+call s:HL('PurpleSign', s:palette.purple, s:palette.none)
 " }}}
 " }}}
 " Extended File Types: {{{
