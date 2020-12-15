@@ -31,10 +31,9 @@ let s:configuration.current_word = get(g:, 'miramare_current_word', get(g:, 'mir
 " Palette: {{{
 let s:palette = {
       \ 'bg0':        ['#212030',   '235',  'Black'],
-      \ 'bg1':        ['#240000',   '236',  'DarkGrey'],
-      \ 'bg2':        ['#240000',   '237',  'DarkGrey'],
-      \ 'bg3':        ['#240000',   '238',  'DarkGrey'],
-      \ 'bg4':        ['#240000',   '239',  'Grey'],
+      \ 'bg1':        ['#0b0c11',   '239',  'Grey'],
+      \ 'grey':       ['#444444',   '245',  'LightGrey'],
+      \ 'light_grey': ['#5b5b5b',   '245',  'LightGrey'],
       \ 'bg_red':     ['#392f32',   '52',   'DarkRed'],
       \ 'bg_green':   ['#333b2f',   '22',   'DarkGreen'],
       \ 'bg_blue':    ['#203a41',   '17',   'DarkBlue'],
@@ -44,12 +43,9 @@ let s:palette = {
       \ 'yellow':     ['#fefe5c',   '214',  'Yellow'],
       \ 'green':      ['#1fee86',   '142',  'Green'],
       \ 'cyan':       ['#65eef5',   '108',  'Cyan'],
-      \ 'light_cyan':       ['#4ea599',   '108',  'Cyan'],
+      \ 'light_cyan': ['#4ea599',   '108',  'Cyan'],
       \ 'blue':       ['#266fd5',   '109',  'Blue'],
       \ 'purple':     ['#9e2ef6',   '175',  'Magenta'],
-      \ 'grey':       ['#444444',   '245',  'LightGrey'],
-      \ 'light_grey': ['#5b5b5b',   '245',  'LightGrey'],
-      \ 'gold':       ['#d8caac',   '214',  'Yellow'],
       \ 'none':       ['NONE',      'NONE', 'NONE']
       \ }
 " }}}
@@ -180,7 +176,7 @@ call s:HL('Search', s:palette.bg0, s:palette.red)
 call s:HL('MatchParen', s:palette.none, s:palette.light_grey)
 call s:HL('NonText', s:palette.grey, s:palette.none)
 call s:HL('Pmenu', s:palette.fg, s:palette.bg1)
-call s:HL('PmenuSbar', s:palette.none, s:palette.bg2)
+call s:HL('PmenuSbar', s:palette.none, s:palette.bg1)
 call s:HL('PmenuThumb', s:palette.none, s:palette.bg1)
 call s:HL('PmenuSel', s:palette.bg0, s:palette.fg)
 call s:HL('WildMenu', s:palette.bg0, s:palette.fg)
@@ -189,16 +185,16 @@ call s:HL('SpellBad', s:palette.red, s:palette.none, 'undercurl', s:palette.red)
 call s:HL('SpellCap', s:palette.yellow, s:palette.none, 'undercurl', s:palette.yellow)
 call s:HL('SpellLocal', s:palette.blue, s:palette.none, 'undercurl', s:palette.blue)
 call s:HL('SpellRare', s:palette.purple, s:palette.none, 'undercurl', s:palette.purple)
-call s:HL('StatusLine', s:palette.fg, s:palette.bg3)
-call s:HL('StatusLineTerm', s:palette.fg, s:palette.bg3)
+call s:HL('StatusLine', s:palette.fg, s:palette.bg1)
+call s:HL('StatusLineTerm', s:palette.fg, s:palette.bg1)
 call s:HL('StatusLineNC', s:palette.grey, s:palette.bg1)
 call s:HL('StatusLineTermNC', s:palette.grey, s:palette.bg1)
-call s:HL('TabLine', s:palette.fg, s:palette.bg4)
+call s:HL('TabLine', s:palette.fg, s:palette.bg1)
 call s:HL('TabLineFill', s:palette.grey, s:palette.bg1)
 call s:HL('TabLineSel', s:palette.bg0, s:palette.green)
 call s:HL('VertSplit', s:palette.grey, s:palette.none)
 call s:HL('Visual', s:palette.none, s:palette.grey)
-call s:HL('VisualNOS', s:palette.bg0, s:palette.gold, 'underline')
+call s:HL('VisualNOS', s:palette.bg0, s:palette.yellow, 'underline')
 call s:HL('CursorIM', s:palette.none, s:palette.fg)
 call s:HL('ToolbarLine', s:palette.none, s:palette.grey)
 call s:HL('ToolbarButton', s:palette.fg, s:palette.bg0, 'bold')
@@ -1393,7 +1389,7 @@ highlight! link helpSectionDelim Grey
 " Plugins: {{{
 " junegunn/limelight.vim{{{
 let g:limelight_conceal_guifg = s:palette.grey[0]
-let g:limelight_conceal_ctermfg = s:palette.bg4[1]
+let g:limelight_conceal_ctermfg = s:palette.bg1[1]
 " }}}
 " junegunn/vim-plug{{{
 call s:HL('plug1', s:palette.orange, s:palette.none, 'bold')
@@ -1422,7 +1418,7 @@ elseif s:configuration.current_word ==# 'underline'
 elseif s:configuration.current_word ==# 'italic'
   call s:HL('CocHighlightText', s:palette.none, s:palette.none, 'italic')
 elseif s:configuration.current_word ==# 'grey background'
-  call s:HL('CocHighlightText', s:palette.none, s:palette.bg2)
+  call s:HL('CocHighlightText', s:palette.none, s:palette.bg1)
 endif
 highlight! link CocErrorSign RedSign
 highlight! link CocWarningSign YellowSign
@@ -1525,18 +1521,18 @@ let g:fzf_colors = {
 " Shougo/denite.nvim{{{
 call s:HL('deniteMatchedChar', s:palette.green, s:palette.none, 'bold')
 call s:HL('deniteMatchedRange', s:palette.green, s:palette.none, 'bold,underline')
-call s:HL('deniteInput', s:palette.green, s:palette.bg3, 'bold')
-call s:HL('deniteStatusLineNumber', s:palette.purple, s:palette.bg3)
-call s:HL('deniteStatusLinePath', s:palette.fg, s:palette.bg3)
+call s:HL('deniteInput', s:palette.green, s:palette.bg1, 'bold')
+call s:HL('deniteStatusLineNumber', s:palette.purple, s:palette.bg1)
+call s:HL('deniteStatusLinePath', s:palette.fg, s:palette.bg1)
 highlight! link deniteSelectedLin Green
 " }}}
 " kien/ctrlp.vim{{{
 call s:HL('CtrlPMatch', s:palette.green, s:palette.none, 'bold')
-call s:HL('CtrlPPrtBase', s:palette.bg3, s:palette.none)
-call s:HL('CtrlPLinePre', s:palette.bg3, s:palette.none)
-call s:HL('CtrlPMode1', s:palette.blue, s:palette.bg3, 'bold')
+call s:HL('CtrlPPrtBase', s:palette.bg1, s:palette.none)
+call s:HL('CtrlPLinePre', s:palette.bg1, s:palette.none)
+call s:HL('CtrlPMode1', s:palette.blue, s:palette.bg1, 'bold')
 call s:HL('CtrlPMode2', s:palette.bg0, s:palette.blue, 'bold')
-call s:HL('CtrlPStats', s:palette.grey, s:palette.bg3, 'bold')
+call s:HL('CtrlPStats', s:palette.grey, s:palette.bg1, 'bold')
 highlight! link CtrlPNoEntries Red
 highlight! link CtrlPPrtCursor Blue
 " }}}
@@ -1642,7 +1638,7 @@ highlight! link CursorWord1 CocHighlightText
 " nathanaelkane/vim-indent-guides{{{
 if get(g:, 'indent_guides_auto_colors', 1) == 0
   call s:HL('IndentGuidesOdd', s:palette.bg0, s:palette.bg1)
-  call s:HL('IndentGuidesEven', s:palette.bg0, s:palette.bg2)
+  call s:HL('IndentGuidesEven', s:palette.bg0, s:palette.bg1)
 endif
 " }}}
 " luochen1990/rainbow{{{
