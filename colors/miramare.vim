@@ -30,7 +30,7 @@ let s:configuration.current_word = get(g:, 'miramare_current_word', get(g:, 'mir
 " }}}
 " Palette: {{{
 let s:palette = {
-      \ 'bg0':        ['#2A2426',   '235',  'Black'],
+      \ 'bg0':        ['#212030',   '235',  'Black'],
       \ 'bg1':        ['#240000',   '236',  'DarkGrey'],
       \ 'bg2':        ['#240000',   '237',  'DarkGrey'],
       \ 'bg3':        ['#240000',   '238',  'DarkGrey'],
@@ -38,14 +38,14 @@ let s:palette = {
       \ 'bg_red':     ['#392f32',   '52',   'DarkRed'],
       \ 'bg_green':   ['#333b2f',   '22',   'DarkGreen'],
       \ 'bg_blue':    ['#203a41',   '17',   'DarkBlue'],
-      \ 'fg':         ['#e6d6ac',   '223',  'White'],
-      \ 'red':        ['#e68183',   '167',  'Red'],
-      \ 'orange':     ['#e39b7b',   '208',  'Red'],
-      \ 'yellow':     ['#d9bb80',   '214',  'Yellow'],
-      \ 'green':      ['#a7c080',   '142',  'Green'],
-      \ 'cyan':       ['#87c095',   '108',  'Cyan'],
-      \ 'blue':       ['#89beba',   '109',  'Blue'],
-      \ 'purple':     ['#d3a0bc',   '175',  'Magenta'],
+      \ 'fg':         ['#FFFFFF',   '223',  'White'],
+      \ 'red':        ['#f6605c',   '167',  'Red'],
+      \ 'orange':     ['#fd9631',   '208',  'Red'],
+      \ 'yellow':     ['#fefe5c',   '214',  'Yellow'],
+      \ 'green':      ['#1fee86',   '142',  'Green'],
+      \ 'cyan':       ['#65eef5',   '108',  'Cyan'],
+      \ 'blue':       ['#266fd5',   '109',  'Blue'],
+      \ 'purple':     ['#9e2ef6',   '175',  'Magenta'],
       \ 'grey':       ['#444444',   '245',  'LightGrey'],
       \ 'light_grey': ['#5b5b5b',   '245',  'LightGrey'],
       \ 'gold':       ['#d8caac',   '214',  'Yellow'],
@@ -163,7 +163,7 @@ call s:HL('LineNr', s:palette.grey, s:palette.none)
 if &relativenumber == 1 && &cursorline == 0
   call s:HL('CursorLineNr', s:palette.fg, s:palette.none)
 else
-  call s:HL('CursorLineNr', s:palette.fg, s:palette.bg1)
+  call s:HL('CursorLineNr', s:palette.fg, s:palette.none)
 endif
 call s:HL('DiffAdd', s:palette.none, s:palette.bg_green)
 call s:HL('DiffChange', s:palette.none, s:palette.bg_blue)
