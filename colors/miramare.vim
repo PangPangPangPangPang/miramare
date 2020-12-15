@@ -44,6 +44,7 @@ let s:palette = {
       \ 'yellow':     ['#fefe5c',   '214',  'Yellow'],
       \ 'green':      ['#1fee86',   '142',  'Green'],
       \ 'cyan':       ['#65eef5',   '108',  'Cyan'],
+      \ 'light_cyan':       ['#4ea599',   '108',  'Cyan'],
       \ 'blue':       ['#266fd5',   '109',  'Blue'],
       \ 'purple':     ['#9e2ef6',   '175',  'Magenta'],
       \ 'grey':       ['#444444',   '245',  'LightGrey'],
@@ -159,11 +160,11 @@ elseif s:configuration.cursor ==# 'purple'
 endif
 call s:HL('CursorColumn', s:palette.none, s:palette.bg1)
 call s:HL('CursorLine', s:palette.none, s:palette.bg1)
-call s:HL('LineNr', s:palette.grey, s:palette.none)
+call s:HL('LineNr', s:palette.purple, s:palette.none)
 if &relativenumber == 1 && &cursorline == 0
-  call s:HL('CursorLineNr', s:palette.fg, s:palette.none)
+  call s:HL('CursorLineNr', s:palette.yellow, s:palette.none)
 else
-  call s:HL('CursorLineNr', s:palette.fg, s:palette.none)
+  call s:HL('CursorLineNr', s:palette.yellow, s:palette.none)
 endif
 call s:HL('DiffAdd', s:palette.none, s:palette.bg_green)
 call s:HL('DiffChange', s:palette.none, s:palette.bg_blue)
@@ -262,11 +263,11 @@ else
   call s:HL('String', s:palette.green, s:palette.none)
 endif
 if s:configuration.disable_italic_comment
-  call s:HL('Comment', s:palette.light_grey, s:palette.none)
+  call s:HL('Comment', s:palette.light_cyan, s:palette.none)
   call s:HL('SpecialComment', s:palette.red, s:palette.none)
   call s:HL('Todo', s:palette.purple, s:palette.none)
 else
-  call s:HL('Comment', s:palette.light_grey, s:palette.none, 'italic')
+  call s:HL('Comment', s:palette.light_cyan, s:palette.none, 'italic')
   call s:HL('SpecialComment', s:palette.red, s:palette.none, 'italic')
   call s:HL('Todo', s:palette.purple, s:palette.none, 'italic')
 endif
