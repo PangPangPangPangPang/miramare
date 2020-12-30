@@ -163,7 +163,7 @@ call s:HL('LineNr', s:palette.grey, s:palette.none)
 if &relativenumber == 1 && &cursorline == 0
   call s:HL('CursorLineNr', s:palette.fg, s:palette.none)
 else
-  call s:HL('CursorLineNr', s:palette.fg, s:palette.bg1)
+  call s:HL('CursorLineNr', s:palette.fg, s:palette.none)
 endif
 call s:HL('DiffAdd', s:palette.none, s:palette.bg_green)
 call s:HL('DiffChange', s:palette.none, s:palette.bg_blue)
