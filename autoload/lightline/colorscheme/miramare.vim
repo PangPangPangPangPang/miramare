@@ -30,8 +30,8 @@ let s:p.normal.right = [ [ s:dark, s:light ], [ s:light, s:dark ] ]
 let s:p.tabline.left = [ [s:light, s:dark] ]
 let s:p.tabline.tabsel = [ [ s:dark, s:normal, 'bold' ] ]
 
-let s:p.inactive.left =  [ [ s:light, s:grey ], [ s:light, s:grey ] ]
-let s:p.inactive.middle = [ [ s:light, s:grey ] ]
-let s:p.inactive.right = [ [ s:light, s:grey ], [ s:light, s:grey ] ]
+let s:p.inactive.left =  [ [ s:light, s:dark ], [ s:light, s:dark ] ]
+let s:p.inactive.middle = [ [ s:light, s:dark ] ]
+let s:p.inactive.right = [ [ s:light, s:dark ], [ s:light, s:dark ] ]
 
 let g:lightline#colorscheme#miramare#palette = lightline#colorscheme#flatten(s:p)
